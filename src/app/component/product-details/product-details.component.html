@@ -1,0 +1,12 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product" class="product-item">
+  <h3>{{ product.title }}</h3>
+  <p>Price: {{ product.price | currency: 'INR' }}</p>
+  <p>Description: {{ product.description }}</p>
+  <p>Category: {{ product.category }}</p>
+  <p>Rating: {{ product.rating.rate }} ({{ product.rating.count }} reviews)</p>
+  <img [src]="product.image" alt="{{ product.title }}" class="product-image">
+  <button (click)="addToCart(product)">Buy</button><br>
+  <button [routerLink]="['/products']">Cancel</button>
+</div>
